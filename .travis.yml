@@ -1,0 +1,21 @@
+language: scala
+scala:
+  - 2.12.8
+jdk: oraclejdk8
+
+before_install:
+  - export TZ=Europe/Rome
+  - date
+
+script:
+  - './gradlew clean build test reportScoverage'
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email:
+    recipients:
+      - gioele.masini@studio.unibo.it
+    on_success: never
+    on_failure: always
