@@ -11,5 +11,6 @@ public class JavaGreeterTest {
 
     // assert statements
     assertTrue("Message must start with 'hello' word", greeter.sayHello().toLowerCase().startsWith("hello"));
+    assertTrue(1==2);
   }
 }
